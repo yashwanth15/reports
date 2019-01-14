@@ -6,7 +6,34 @@
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
+.searchBar{
+  padding:3%;
+}
+.filterBar{
+  padding:3%;
+}
+.filterOption{
+  padding:3%;
+}
+.spinner{
+  width:50px;
+  height:50px;
+  border:5px solid #ccc;
+  border-top-color: #1a67cc;
+  border-radius: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: round 1s linear infinite;
+}
 
+@keyframes round{
+  from{transform: rotate(0deg)}
+  to{transform: rotate(360deg)}
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,78 +49,237 @@
   color: #61dafb;
 }
 
-.header {
-  height:70px;
+.dropdown{
+  height:auto;
+  background-color: #eff2f1;
+  z-index: 10;
+  border: 1px solid #bdbfbf;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+.list{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  cursor: pointer;
+  border-bottom-width: 1px;
+  border-bottom-color: #bdbfbf;
+  border-bottom-style: solid;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
   width:100%;
-  display: flex;
-  flex-direction: row;
-  background-color: #282c34;
-  color:white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
-  align-items: center;
-  padding-left: 1%;
-  margin-bottom: 1%;
-}
-.cards{
-  display: flex;
-  flex-direction: row;
-}
-.filterTag{
-  display: flex;
-  flex-direction: row;
-  margin-left: 1%;
-}
-.filter{
-  margin-left: 1%;
-}
-.report {
-  height:30%;
-  width:40%;
-  margin:1%;
-  background-color: #e8e8e8;
-  display: flex;
-  flex-direction: row;
-}
-.info {
-  text-align: left;
-  margin:3%;
-  margin-left: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.image {
-  height:200px;
-  width:200px;
-  margin:3%;
+.modal-main {
+  position:fixed;
+  background: white;
+  width: auto;
+  height: auto;
+  border-radius: 2px;
+  background-color: #d6d6d6;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding:2%;
+  display: flex;
+  flex-direction: column;
 }
 
-.title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  color: #40a092;
-  line-height: 30px;
+.display-block {
+  display: block;
 }
-.shortDesc {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 30px;
+
+.display-none {
+  display: none;
 }
-.cost {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 30px;
-  color:#9e9e9e;
+.closeButton {
+  margin-top: 2%;
+  width:auto;
+  align-self: center;
 }
-.date {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 30px;
-  color:#9e9e9e;
+@media screen and (min-width: 320px) {
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    .report{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: #ededed;
+        border-radius: 1px;
+        box-shadow: 2px 2px 3px #aaaaaa;
+    }
+    .image {
+      height:50px;
+      width:auto;
+      margin:3%;
+    }
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      color: #40a092;
+      line-height: 20px;
+    }
+    .info {
+      text-align: left;
+      margin:3%;
+      margin-left: 0;
+    }
+    .shortDesc {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 15px;
+    }
+    .cost {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      line-height: 15px;
+      color:#9e9e9e;
+    }
+    .date {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      line-height: 15px;
+      color:#9e9e9e;
+    }
+    .filterTag{
+      display: flex;
+      flex-direction: row;
+      margin-left: 5%;
+      margin-bottom: 3%;
+      margin-top: 3%
+    }
+    .filter{
+      margin-left: 1%;
+    }
+    .search {
+      display: flex;
+      flex-direction: column;
+      height:30px;
+    }
+
+    .header {
+      height:70px;
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      background-color: #282c34;
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      align-items: center;
+      padding-left: 5%;
+    }
 }
-.search {
-  display: flex;
-  flex-direction: row;
-  height:30px;
+
+@media screen and (min-width: 600px) {
+  .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      color: #40a092;
+      line-height: 22px;
+    }
+    .info {
+      text-align: left;
+      margin:3%;
+      margin-left: 0;
+    }
+    .shortDesc {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 15px;
+    }
+    .cost {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 15px;
+      color:#9e9e9e;
+    }
+    .date {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      line-height: 15px;
+      color:#9e9e9e;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .cards{
+        grid-template-columns: 1fr 1fr;
+        width:90%;
+        margin: auto
+    }
+    .image {
+      height:100px;
+      width:auto;
+      margin:3%;
+    }
+    .title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      color: #40a092;
+      line-height: 25px;
+    }
+    .info {
+      text-align: left;
+      margin:3%;
+      margin-left: 0;
+    }
+    .shortDesc {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    .cost {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 20px;
+      color:#9e9e9e;
+    }
+    .date {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      line-height: 20px;
+      color:#9e9e9e;
+    }
+    .filterTag{
+      display: flex;
+      flex-direction: row;
+      margin-left: 5%;
+      margin-bottom: 1%;
+      margin-top: 1%;
+    }
+    .filter{
+      margin-left: 1%;
+    }
+    .search {
+      display: flex;
+      flex-direction: column;
+      height:30px;
+    }
+
+    .header {
+      height:70px;
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      background-color: #282c34;
+      color:white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      align-items: center;
+      padding-left: 5%;
+    }
 }
 
 @keyframes App-logo-spin {
